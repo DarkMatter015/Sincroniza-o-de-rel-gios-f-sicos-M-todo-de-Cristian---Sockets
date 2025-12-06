@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package sincclock;
+
+option java_multiple_files = true;
+option java_package = "sincclock";
+option java_outer_classname = "SincClockProto";
+
+service TimeService {
+  rpc GetTime (TimeRequest) returns (TimeResponse) {}
+}
+
+message TimeRequest {
+  // Empty request
+}
+
+message TimeResponse {
+  int64 server_time = 1;
+}
